@@ -14,8 +14,6 @@ jobs:
             - name: checkout code
               uses: Actions/checkout@v3
              
-            - name: run the  app.py script
-              run: pythin3 app.py
 
             - name: run pytest
               run: pytest -v 
