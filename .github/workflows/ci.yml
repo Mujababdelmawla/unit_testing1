@@ -1,0 +1,25 @@
+name: ci-pipeline for unit testing
+
+on: 
+    push:
+        branches:
+            main
+
+
+jobs:
+    ci-build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout code
+              uses: Actions/checkout@v3
+             
+            - name: run the  app.py script
+              run: pythin3 app.py
+
+            - name: run pytest
+              run: pytest -v 
+
+            - name: printing the final test result
+              run: echo "the uit test has been  completed successfully..!"
+
