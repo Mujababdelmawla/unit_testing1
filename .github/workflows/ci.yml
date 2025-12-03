@@ -12,7 +12,17 @@ jobs:
 
         steps:
             - name: checkout code
-              uses: Actions/checkout@v3
+              uses: Actions/checkout@v5
+
+            - name: setup python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.21
+
+            - name: install dependencies
+              run: pip insatll pytest
+
+
              
 
             - name: run pytest
